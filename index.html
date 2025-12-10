@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nana SecretSide</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
+  background-size: 400% 400%;
+  animation: gradientAnim 15s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+@keyframes gradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 15px 0;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+  text-shadow: 0 0 10px #ffeb3b;
+}
+
+
+section {
+  padding: 100px 20px 60px 20px;
+  min-height: 100vh;
+}
+
+
+#home h1 {
+  font-size: 4em;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
+  margin: 10px 0;
+}
+
+#home p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  text-shadow: 0 0 5px #00000050;
+}
+
+/* CARD */
+.card {
+  background: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  padding: 30px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.card h2 {
+  color: #ffebff;
+  margin-bottom: 15px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  justify-items: center; 
+}
+
+.gallery img {
+  width: 100%;       
+  height: 150px;     
+  object-fit: cover; 
+  border-radius: 15px;
+  border: 3px solid #ff1493;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffeb3b, 0 0 25px #ff1493;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #ff4081;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(255,64,129,0.6);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #ff79a9;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255,64,129,0.8);
+}
+
+
+.education-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.education-table th,
+.education-table td {
+  border: 2px solid #fff; 
+  padding: 10px;
+  text-align: center;
+  color: #fff; 
+}
+
+.education-table th {
+  background-color: #ff4081; 
+}
+
+.education-table tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.1); 
+}
+
+.education-table tr:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+
+.emoji {
+  font-size: 2rem;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+
+.custom-list li {
+  list-style: none;
+  margin: 10px 0;
+  font-size: 1.2em;
+  position: relative;
+  padding-left: 30px;
+}
+
+.custom-list li::before {
+  content: "💗";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.love-container {
+  position: relative;
+  width: 100%;
+  height: 60px; 
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.love-emoji {
+  position: absolute;
+  right: -50px; 
+  font-size: 2rem;
+  animation: moveLeft 5s linear infinite;
+}
+
+@keyframes moveLeft {
+  0% { right: -50px; }
+  100% { right: 100%; }
+}
+
+
+#clock {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ffeefc;
+  text-shadow: 0 0 5px pink;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#hobby">Hobby</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+</header>
+
+
+
+<section id="home">
+  <h1>WELCOME</h1>
+  <p>My name is NANA! Welcome to my personal website!</p>
+
+  
+  <div id="clock"></div>
+
+
+  <audio autoplay loop controls>
+    <source src="Igloo.mp3" type="audio/mp3">
+  </audio>
+
+
+  <div class="love-container">
+    <span class="love-emoji" style="top:0; animation-delay:0s;">💖</span>
+    <span class="love-emoji" style="top:0; animation-delay:2s;">💞</span>
+    <span class="love-emoji" style="top:0; animation-delay:4s;">💖</span>
+
+    <span class="love-emoji" style="top:20px; animation-delay:1s;">💖</span>
+    <span class="love-emoji" style="top:20px; animation-delay:3s;">💞</span>
+    <span class="love-emoji" style="top:20px; animation-delay:5s;">💖</span>
+
+    <span class="love-emoji" style="top:40px; animation-delay:0.5s;">💖</span>
+    <span class="love-emoji" style="top:40px; animation-delay:2.5s;">💞</span>
+    <span class="love-emoji" style="top:40px; animation-delay:4.5s;">💖</span>
+  </div>
+
+  <br><br><br>
+
+  <div class="buttons">
+    <a class="btn" href="#about">About Me</a>
+    <a class="btn" href="#education">Education</a>
+    <a class="btn" href="#hobby">Hobby</a>
+    <a class="btn" href="#gallery">Gallery</a>
+  </div>
+</section>
+
+
+
+<section id="about">
+  <div class="card">
+    <h2>About Me</h2>
+
+    <img src="nini-removebg-preview.jpeg" alt="My Photo" width="250">
+
+    <p>
+      Hello! I’m Nana. I’m a <b>simple</b>, <i>chill</i>,
+      and <u>fun-loving</u> person.  
+      I enjoy creating cute things, exploring ideas, and just vibing with life.  
+      I also love learning new things — <abbr title="Information Management Diploma">IMD</abbr> always keeps me busy!
+    </p>
+
+    <ul class="custom-list">
+      <li>Sweet & Soft Vibes</li>
+      <li>Creative Spirit</li>
+      <li>Always Learning</li>
+    </ul>
+
+    <div class="buttons">
+      <a class="btn" href="#home">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="education">
+  <div class="card">
+    <h2>Education</h2>
+
+    <p>Always curious, always learning!</p>
+
+    <table class="education-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>School / University</th>
+          <th>Year</th>
+          <th>Pointer / CGPA</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>UPSR</td>
+          <td>SK Bukit Jana</td>
+          <td>2017</td>
+          <td>5A 1B</td>
+          <td>Co-curricular Award</td>
+        </tr>
+
+        <tr>
+          <td>SPM</td>
+          <td>SMK Bukit Jana</td>
+          <td>2022</td>
+          <td>7A 3B</td>
+          <td>Best Student Award</td>
+        </tr>
+
+        <tr>
+          <td>Diploma</td>
+          <td>UiTM Kedah</td>
+          <td>2023 – Now</td>
+          <td>3.85 <sup>*</sup></td>
+          <td>Dean’s List</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="buttons">
+      <a class="btn" href="#home">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="hobby">
+  <div class="card">
+    <h2>Hobby</h2>
+
+  
+    <span class="emoji">👻</span>
+    <h3>Listening to Horror Podcast</h3>
+    <p>
+      I enjoy spooky stories — fun, thrilling & strangely relaxing.  
+      My favourite is <b>Sembang Seram</b>.
+    </p>
+
+<a href="https://www.youtube.com/@namaChannel" target="_blank">CHECK IT OUT HERE</a>
+  
+    <iframe width="350" height="200" 
+      src="https://www.youtube.com/embed/sBGB_2n2l9A"
+      title="Sembang Seram" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+<br>
+    <span class="emoji">🏃</span>
+    <h3>Playing Sports</h3>
+    <p>I love jogging, badminton & netball!</p>
+
+    <span class="emoji">💃</span>
+    <h3>Dancing</h3>
+    <p>Dancing makes me feel alive & full of energy.</p>
+
+    <div class="buttons">
+      <a class="btn" href="#home">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="card">
+    <h2>Gallery</h2>
+    <p>Memories 💗</p>
+
+  
+    <img src="a.jpeg" usemap="#nanaMap" width="250" style="border-radius:20px; border:3px solid #ff1493;">
+    
+    <map name="nanaMap">
+      <area shape="rect" coords="0,0,120,250" href="https://www.instagram.com" target="_blank" alt="Instagram">
+      <area shape="rect" coords="120,0,250,250" href="https://www.youtube.com" target="_blank" alt="YouTube">
+    </map>
+
+    <div class="gallery">
+      <img src="a.jpeg">
+      <img src="b.jpeg">
+      <img src="c.jpeg">
+      <img src="d.jpeg" height="300">
+      <img src="e.jpeg" height="260">
+      <img src="f.jpeg" height="300">
+      <img src="g.jpeg" height="300">
+      <img src="h.jpeg">
+      <img src="i.jpeg">
+    </div>
+
+    <div class="buttons">
+      <a class="btn" href="#home">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+
+<script>
+function updateClock(){
+  const now = new Date();
+  document.getElementById("clock").innerHTML =
+    now.toLocaleTimeString("en-US", { hour12: true });
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+<p>Last updated: December 2025</p>
+<p>📞Contact: 012-3456789</p>
+
+</body>
+</html>
+
+
+
